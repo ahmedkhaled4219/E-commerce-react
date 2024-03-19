@@ -1,0 +1,10 @@
+.card-img-top {
+  height: 200px;
+  object-fit: contain;
+}
+.des {
+  height: 100px;
+}
+/* .card {
+  height: 400px !important;
+} */
