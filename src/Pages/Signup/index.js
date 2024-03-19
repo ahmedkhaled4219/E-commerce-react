@@ -44,6 +44,9 @@ function Signup() {
     if (values.password !== values.confirm) {
       errors.confirm = "Passwords do not match";
     }
+    if (!values.image) {
+      errors.image = "Image is required";
+    }
     return errors;
   };
 
@@ -123,8 +126,20 @@ function Signup() {
                 isInvalid={!!userInfoErrs.confirm}
                 className="input-field"
               />
+            </Form.Group>
+
+            <Form.Group controlId="formImage">
+              <Form.Label>Upload Image</Form.Label>
+              <Form.Control
+                type="file"
+                name="image"
+                value={userInfo.image}
+                onChange={handleChange}
+                isInvalid={!!userInfoErrs.image}
+                className="input-field"
+              />
               <Form.Control.Feedback type="invalid">
-                {userInfoErrs.confirm}
+                {userInfoErrs.image}
               </Form.Control.Feedback>
             </Form.Group>
 
