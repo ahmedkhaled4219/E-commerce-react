@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import "./style.css";
+import { useDispatch } from "react-redux";
+import { addFormValues } from "../../store/slices/formValues";
 
 function Signup() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -12,6 +14,7 @@ function Signup() {
     confirm: "",
   });
   const [userInfoErrs, setUserInfoErrors] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
     console.log(userInfoErrs);
@@ -54,6 +57,7 @@ function Signup() {
     e.preventDefault();
     setIsFormSubmitted(true);
     setUserInfoErrors(validateForm(userInfo));
+    dispatch(addFormValues(userInfo));
   };
 
   const clearForm = () => {

@@ -17,8 +17,8 @@ export default function Header() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about" activeClassName="text-blue-500">
-            About
+          <NavLink to="/values" activeClassName="text-blue-500">
+            Form Values
           </NavLink>
         </li>
         <li>
